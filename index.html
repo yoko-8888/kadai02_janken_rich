@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css">
+    <title>運命のカード占い</title>
+</head>
+
+<body>
+
+    <header>
+        <h1 id="heading">運命のカード占い</h1>
+        <br><h2>今のあなたに必要なものは？</h2>
+        <h4>A、B、Cの中から気になるカードを直感で選んでみて</h4>
+    </header>
+
+    <main>
+     <ul class="button-list">
+    <li id="A_btn">
+        <div class="image-container">
+            <img src="img/A.png" alt="Aボタンの画像">
+            <span class="text-overlay">A</span>
+        </div>
+    </li>
+    <li id="B_btn">
+        <div class="image-container">
+            <img src="img/B.png" alt="Bボタンの画像">
+            <span class="text-overlay">B</span>
+        </div>
+    </li>
+    <li id="C_btn">
+        <div class="image-container">
+            <img src="img/C.png" alt="Cボタンの画像">
+            <span class="text-overlay">C</span>
+        </div>
+    </li>
+</ul>
+
+
+
+        <div>あなたがいま求めているものは「<span id="pc">なに？</span>」</div>
+        <div id="judgment"></div>
+    </main>
+
+    <footer></footer>
+    <script>
+
+    //headingのアニメーション
+    
+    const heading = document.querySelector('#heading');
+
+    const keyframes = {
+        // borderRadius:[
+            // '20% 50% 50% 70%/50% 50% 70% 50%',
+            // '50% 20% 50% 50%/40% 40% 60% 60%',
+            // '50% 40% 20% 40%/40% 50% 50% 80%',
+            // '50% 50% 50% 20%/40% 40% 60% 60%',
+        // ],
+        color: ['#f66','#fc2','#0c6','#0bd']
+        // opacity: [0,1],
+        // translate: ['0 50px',0],
+    };
+
+    const options = {
+       duration: 8000,
+       direction: 'alternate',
+       iterations: Infinity,
+    };
+
+    heading.animate(keyframes, options);
+    
+    //（A）の時のクリックイベント
+    $("#A_btn").on("click",function(){
+     //（A）の時の乱数・設定
+     const r = Math.ceil( Math.random()*3 );
+     
+     //IF分岐処理
+     let view = "";
+     if(r==1){
+        $("#pc").html('<img src="img/love.png" width="300">');
+        $("#judgment").html("LOVE!")
+     }
+     if(r==2){
+        $("#pc").html('<img src="img/passion.png" width="300">');
+        $("#judgment").html("PASSION!")
+     }
+     if(r==3){
+        $("#pc").html('<img src="img/sleep.png" width="300">');
+        $("#judgment").html("SLEEP!")
+     }
+
+    //表示処理
+    //$("#judgment").html(view);
+    });
+
+    //**********************************************************
+
+    //（B）の時のクリックイベント
+    $("#B_btn").on("click",function(){
+    //（B）の時の乱数・設定
+    const r = Math.ceil( Math.random()*3 ); 
+
+    //IF分岐処理
+    let view = "";
+    if(r==1){
+    $("#pc").html('<img src="img/passion.png" width="300">');
+    $("#judgment").html("PASSION!")
+    }
+    
+    if(r==2){
+    $("#pc").html('<img src="img/sleep.png" width="300">'); 
+    $("#judgment").html("SLEEP!")
+    }
+   
+    if(r==3){
+    $("#pc").html('<img src="img/love.png" width="300">');
+    $("#judgment").html("LOVE!")
+    }
+
+    //表示処理
+        //$("#judgment").html(view);
+    });
+
+    //********************************
+    //（C）の時のクリックイベント
+
+    $("#C_btn").on("click",function(){
+    //（C）の時の乱数・設定
+    const r = Math.ceil( Math.random()*3 ); 
+    
+    //IF分岐処理
+    let view = "";
+    if(r==1){
+    $("#pc").html('<img src="img/sleep.png" width="300">');
+    $("#judgment").html("SLEEP!")
+    }
+    
+    if(r==2){
+    $("#pc").html('<img src="img/love.png" width="300">');
+    $("#judgment").html("LOVE!")
+    }
+    
+    if(r==3){
+        $("#pc").html('<img src="img/passion.png" width="300">');
+    $("#judgment").html("PASSION!")
+    }
+    
+
+
+    //表示処理
+    //$("#judgment").html(view);
+});
+
+
+</script>
+</body>
+
+</html>

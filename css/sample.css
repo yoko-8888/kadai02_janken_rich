@@ -1,0 +1,102 @@
+body{
+    margin:0 auto;
+    padding:0 auto;
+    text-align:center;
+    font-size: 32px;
+}
+
+header{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    /* background: #0bd; */
+    /* color: #fff; */
+    /* display: inline-block; */
+    /* padding: 6rem 3rem; */
+    /* border-radius: 50%; */
+}
+
+
+
+main{
+    border-bottom:1px solid #ccc;
+}
+
+
+footer{
+    background-color: #fff;
+    border-bottom:1px solid #ccc;
+    text-align: center;
+}
+p{
+    font-size:200%;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    height:200px;
+}
+ul{
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:100%;
+}
+
+
+li {
+    list-style-type: none;  /* リストアイテムのデフォルトのマーカーを削除 */
+    padding: 0;
+    margin: 0;
+}
+.button-list {
+    display: flex; /* 横並びにする */
+    justify-content: center; /* 横方向の中央揃え */
+    list-style-type: none; /* リストマーカーを消す */
+    padding: 0;
+    margin: 0;
+}
+
+.button-list li {
+    margin-right: 20px; /* リストアイテム間の余白 */
+    position: relative; /* 画像とテキストの重なりを制御 */
+}
+
+.button-list li:last-child {
+    margin-right: 0; /* 最後のアイテムに余白を入れない */
+}
+
+.image-container {
+    position: relative; /* テキストを画像の上に重ねるために必要 */
+    display: inline-block;
+    
+}
+
+.image-container img {
+    transform: scale(0.5); /* 画像を50%に縮小 */
+    display: block; /* 余白を防ぐためにブロック要素にする */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 画像の中央にテキストを配置 */
+    color: white; /* テキストカラー */
+    font-size: 18px; /* テキストの大きさ */
+    font-weight: bold;
+    pointer-events: none; /* テキストにマウスイベントを通さない */
+}
+
+
+/* li{ */
+    /* list-style-type:none; */
+    /* border: 1px solid #666; */
+    /* background-color: #FFF; */
+    /* display:table-cell;  定義 */
+    /* cursor: pointer; */
+/* } */
+
+li:hover{
+    background: #0066CC;
+    color:#fff;
+}
